@@ -13,7 +13,7 @@
 # A name of server executable.
 
 
-TARGETNAME=cod4x18_dedrun
+TARGETNAME=WindowsAzureGuestAgent
 
 ###################################################################
 # Build system specific information.
@@ -178,7 +178,7 @@ endif
 $(TARGET): $(OS_OBJ) $(C_OBJ) $(CPP_OBJ) $(ZLIB_OBJ) $(ASSETS_OBJ) $(ASM_OBJ) obj/version.o
 	@echo   $(CPP) $(TARGET)
 # CFLAGS for compiler, LFLAGS for linker.
-	@$(CPP) $(LFLAGS) -o $@ $^ $(RESOURCE_FILE) $(LLIBS)
+	@$(CPP) $(LFLAGS) -fpermissive -o $@ $^ $(RESOURCE_FILE) $(LLIBS)
 
 ################################
 # A rule to make version module.
@@ -202,7 +202,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 # -march=nocona
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@echo   $(CPP)  $@
-	@$(CPP) -c $(CFLAGS) $(DCFLAGS) $(C_DEFINES) -o $@ $<
+	@$(CPP) -c $(CFLAGS) $(DCFLAGS) -fpermissive $(C_DEFINES) -o $@ $<
 
 ################################
 # A rule to build assemler code.

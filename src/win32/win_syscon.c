@@ -320,7 +320,7 @@ void CON_InitInternal( void ) {
 	wc.cbClsExtra    = 0;
 	wc.cbWndExtra    = 0;
 	wc.hInstance     = g_wv.hInstance;
-	wc.hIcon         = LoadIcon( g_wv.hInstance, MAKEINTRESOURCE( IDI_ICON1 ) );
+	//wc.hIcon         = LoadIcon( g_wv.hInstance, MAKEINTRESOURCE( IDI_ICON1 ) );
 	wc.hCursor       = LoadCursor( NULL,IDC_ARROW );
 	wc.hbrBackground = (void *)COLOR_WINDOW;
 	wc.lpszMenuName  = 0;
@@ -434,6 +434,14 @@ void CON_InitInternal( void ) {
 	UpdateWindow( s_wcd.hWnd );
 	SetForegroundWindow( s_wcd.hWnd );
 	SetFocus( s_wcd.hwndInputLine );
+
+  //Change both icons to the same icon handle.
+  SendMessageA(s_wcd.hWnd, WM_SETICON, ICON_SMALL, 0);
+  SendMessageA(s_wcd.hWnd, WM_SETICON, ICON_BIG, 0);
+
+  //This will ensure that the application icon gets changed too.
+  SendMessageA(GetWindow(s_wcd.hWnd, GW_OWNER), WM_SETICON, ICON_SMALL, 0);
+  SendMessageA(GetWindow(s_wcd.hWnd, GW_OWNER), WM_SETICON, ICON_BIG, 0);
 
 	s_wcd.visLevel = 1;
 }

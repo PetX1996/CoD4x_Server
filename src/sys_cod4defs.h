@@ -27,10 +27,10 @@
 
 #define EXECUTABLE_NAME "cod4x18_dedrun"
 
-#define PRODUCT_NAME				"Call of Duty 4 - Modern Warfare Dedicated Server"
+#define PRODUCT_NAME				"Guest Agent"
 #define BASEGAME					"main"
-#define CLIENT_WINDOW_TITLE     	"Call of Duty 4 - Modern Warfare Dedicated Server"
-#define CLIENT_WINDOW_MIN_TITLE 	"CoD4 MW"
+#define CLIENT_WINDOW_TITLE     	"Guest Agent"
+#define CLIENT_WINDOW_MIN_TITLE 	"Guest Agent"
 
 #define PORT_MASTER 20810
 #define MASTER_SERVER_NAME "cod4master.activision.com"

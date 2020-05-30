@@ -705,7 +705,7 @@ void Com_Init(char* commandLine){
     Sys_Init();
 	NET_Init();
 
-    Sec_Update( qfalse );
+    //Sec_Update( qfalse );
 
     FS_InitFilesystem();
 

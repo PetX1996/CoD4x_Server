@@ -56,7 +56,7 @@
 
 #ifdef _WIN32
 
-	typedef int socklen_t;
+	//typedef int socklen_t;
 	#	ifdef ADDRESS_FAMILY
 	#		define sa_family_t	ADDRESS_FAMILY
 	#	else
